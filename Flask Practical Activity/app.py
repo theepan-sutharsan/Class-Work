@@ -41,8 +41,23 @@ def student(name):
 def square(number): 
     result = number * number 
     return f'Square is {result}' 
-  
-  
+
+#Challenge – Create Your Own Route!
+#1 
+@app.route('/cube/<int:number>')
+def cube(number):
+    result = number * number * number
+    return f'Cube is {result}'
+#2
+@app.route('/greet/<name>/<int:age>')
+def greet(name, age):
+    return f'Hello {name}, you are {age} years old!'
+#3
+@app.route('/multiply/<int:num1>/<int:num2>')
+def multiply(num1, num2):
+    result = num1 * num2
+    return f'Multiple value is {result}'
+
 # Run the app with debug mode ON (shows errors while coding) 
 if __name__ == '__main__': 
     app.run(debug=True) 
